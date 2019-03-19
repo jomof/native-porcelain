@@ -19,8 +19,15 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
+}
+
+
+allprojects {
+    ext {
+        porcelainOutputRoot = file("../../../build/android")
+    }
+    buildDir = "${ext.porcelainOutputRoot}/${project.name}"
 }
 
 task clean(type: Delete) {

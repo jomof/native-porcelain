@@ -27,8 +27,10 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path "src/main/cpp/CMakeLists.txt"
+            path "../../../CMakeLists.txt"
             version "3.10.2"
+            // Change output location to peer folder of CMakeLists.txt
+            buildStagingDirectory "${project.ext.porcelainOutputRoot}/cxx"
         }
     }
 }
